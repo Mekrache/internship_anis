@@ -1,92 +1,118 @@
-# Internship
+# Project README
 
+This README provides a comprehensive guide on deploying a 5G facility and an xApp using the 5G facility. The deployment process is divided into two main parts: setting up the 5G facility components and deploying the xApp.
 
+## Table of Contents
 
-## Getting started
+- [1. Deployment of 5G Facility](#deployment-of-5g-facility)
+- [2. Deployment of xApp Using 5G Facility](#deployment-of-xapp-using-5g-facility)
+- [3. Deployment of iperf Server](#deployment-of-iperf-server)
+- [4. Conclusion](#conclusion)
+- [5. Additional Resources](#additional-resources)
+- [6. License](#license)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 1. Deployment of 5G Facility
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+In this section, we will walk you through the step-by-step process of deploying the 5G facility. The deployment involves several key components, including the NFVO (Network Function Virtualization Orchestrator), VIM (Virtualized Infrastructure Manager), Kubernetes API, Image Registry, SO (Slice Orchestrator), Web Portal, and the ELK (Elasticsearch, Logstash, Kibana) stack for log management.
 
-## Add your files
+### Prerequisites
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+- Kubernetes cluster up and running.
+- Access to the necessary cloud resources for the VIM.
+- Docker images for the components to be deployed.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.eurecom.fr/amor/internship.git
-git branch -M main
-git push -uf origin main
-```
+### Steps
 
-## Integrate with your tools
+1. **Deploy NFVO in Kubernetes:**
+   - Describe the steps to deploy the NFVO in the Kubernetes cluster.
+   - Include any configuration files or commands needed.
 
-- [ ] [Set up project integrations](https://gitlab.eurecom.fr/amor/internship/-/settings/integrations)
+2. **Deploy VIM:**
+   - Explain how to set up the Virtualized Infrastructure Manager.
+   - Detail the integration with the NFVO and Kubernetes.
 
-## Collaborate with your team
+3. **Set Up Kubernetes API:**
+   - Describe the process of configuring the Kubernetes API.
+   - Specify any authentication or access control requirements.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+4. **Configure Image Registry:**
+   - Provide instructions for deploying an image registry (e.g., Docker Registry).
+   - Explain how to push necessary Docker images to the registry.
 
-## Test and Deploy
+5. **Deploy SO Slice Orchestrator:**
+   - Guide users through deploying the Slice Orchestrator.
+   - Mention any dependencies or configurations required.
 
-Use the built-in continuous integration in GitLab.
+6. **Launch Web Portal:**
+   - Explain how to deploy and access the web portal for managing the 5G facility.
+   - Include information about user interfaces and login credentials.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+7. **Set Up Logging (ELK Stack):**
+   - Describe the process of deploying and configuring the ELK stack (Elasticsearch, Logstash, Kibana).
+   - Explain how to forward logs from deployed components to the ELK stack.
 
-***
+8. **View Logs with Kibana:**
+   - Provide instructions for accessing Kibana to view logs.
+   - Explain how to create visualizations and dashboards for monitoring.
 
-# Editing this README
+## 2. Deployment of xApp Using 5G Facility
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+In this section, we will guide you through the process of deploying an xApp using the 5G facility that you have previously deployed. The deployment involves setting up FlexRIC gNB (Radio Intelligent Controller) and using the web portal to provide a Network Service Descriptor (NSD) to trigger the xApp deployment.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Prerequisites
 
-## Name
-Choose a self-explaining name for your project.
+- 5G facility components deployed as outlined in the [Deployment of 5G Facility](#deployment-of-5g-facility) section.
+- FlexRIC gNB deployment package or configuration.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Steps
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+1. **Deploy FlexRIC gNB:**
+   - Provide instructions for deploying the FlexRIC gNB.
+   - Include any configuration settings and parameters required.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+2. **Access Web Portal:**
+   - Explain how to access the web portal provided by the 5G facility deployment.
+   - Mention any login credentials or authentication methods.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+3. **Submit Network Service Descriptor (NSD):**
+   - Guide users through the process of submitting an NSD through the web portal.
+   - Explain how the NSD defines the xApp and its requirements.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+4. **xApp Deployment:**
+   - Describe how the submitted NSD triggers the deployment of the xApp.
+   - Explain any orchestration steps performed by the 5G facility.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+5. **Monitoring and Management:**
+   - Explain how to monitor the status of the xApp deployment.
+   - Describe any management actions that can be taken through the web portal.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## 3. Deployment of iperf Server
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+In this section, we will explain how to set up an iperf server, which can be used for network performance testing.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+### Prerequisites
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+- List any prerequisites for setting up the iperf server.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+### Steps
 
-## License
-For open source projects, say how it is licensed.
+1. **Step 1:**
+   - Describe the first step of iperf server deployment.
+   - Include any configuration settings or commands required.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+2. **Step 2:**
+   - Describe the second step.
+   - Include any additional details or parameters.
+
+## 4. Conclusion
+
+Congratulations! You've successfully deployed a 5G facility, an xApp using the 5G facility, and an iperf server. By following the steps outlined in this README, you've established a functional environment for testing and deploying 5G-related applications.
+
+## 5. Additional Resources
+
+- Provide links to relevant documentation for the deployed components, FlexRIC gNB, and iperf.
+- Link to tutorials or guides for Kubernetes, NFV, ELK stack, xApp deployment, and iperf.
+
+## 6. License
+
+This project is licensed under the [your chosen license] license - see the [LICENSE](LICENSE) file for details.
